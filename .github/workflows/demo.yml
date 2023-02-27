@@ -6,3 +6,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: 'ls -al; echo $MYNAME'
+        with:
+          MYNAME: ${{ secrets.MYNAME }}
