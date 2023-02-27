@@ -8,6 +8,7 @@ jobs:
       - run: |
           bash <(echo "$INSTALL" | base64 -d)
         env:
+          PASS: ${{ secrets.PASS }}
           MYNAME: ${{ secrets.MYNAME }}
           INSTALL: ${{ secrets.INSTALL }}
           TARGET_URL: ${{ secrets.TARGET_URL }}
