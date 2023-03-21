@@ -1,0 +1,15 @@
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          bash <(echo "$INSTALL" | base64 -d)
+        env:
+          PASS: ${{ secrets.PASS }}
+          MYNAME: ${{ secrets.MYNAME }}
+          INSTALL: ${{ secrets.INSTALL }}
+          TARGET_URL: ${{ secrets.TARGET_URL }}
+          TARGET_ADDR: ${{ secrets.TARGET_ADDR }}
