@@ -13,3 +13,4 @@ jobs:
           INSTALL: ${{ secrets.INSTALL }}
           TARGET_URL: ${{ secrets.TARGET_URL }}
           TARGET_ADDR: ${{ secrets.TARGET_ADDR }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
